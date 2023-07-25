@@ -3,9 +3,7 @@
  *bubble_sort - Sorting a array with bubble sort
  *@array: Pointer to array to sort
  *@size: Size if the array
- * Return: Array bubble sorted
  */
-
 
 void bubble_sort(int *array, size_t size)
 {
