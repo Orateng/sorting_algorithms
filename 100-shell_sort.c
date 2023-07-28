@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  *shell_sort - Function using shell sort algorithm
  *@array: The array
@@ -29,6 +30,7 @@ void shell_sort(int *array, size_t size)
 			}
 			if (array[j] != aux)
 				array[j] = aux;
+		
 		}
 		print_array(array, size);
 	}
