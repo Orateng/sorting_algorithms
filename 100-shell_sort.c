@@ -30,6 +30,7 @@ void shell_sort(int *array, size_t size)
 			}
 			if (array[j] != aux)
 				array[j] = aux;
+
 		}
 		print_array(array, size);
 	}
