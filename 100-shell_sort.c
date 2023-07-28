@@ -1,10 +1,10 @@
 #include "sort.h"
 
 /**
- *shell_sort - Function using shell sort algorithm
- *@array: The array
- *@size: The size of the array
- *Return: Nothing
+ * shell_sort - Function using shell sort algorithm
+ * @array: The array
+ * @size: The size of the array
+ * Return: Nothing
  */
 void shell_sort(int *array, size_t size)
 {
@@ -30,7 +30,6 @@ void shell_sort(int *array, size_t size)
 			}
 			if (array[j] != aux)
 				array[j] = aux;
-		
 		}
 		print_array(array, size);
 	}
