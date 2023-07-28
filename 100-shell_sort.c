@@ -8,30 +8,39 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	unsigned int i = 0, j = 0, gap = 0;
-	int aux = 0;
+	size_t gap, i, j;
 
 	if (array == NULL || size < 2)
 		return;
 
-	while (gap < size / 3)
+	for (gap = 1; gap < (size / 3);)
 		gap = gap * 3 + 1;
 
-	for (; gap > 0; gap = (gap - 1) / 3)
+	for (; gap >= 1; gap /= 3)
 	{
 		for (i = gap; i < size; i++)
 		{
-			aux = array[i];
-			for (j = i; j >= gap && array[j - gap] > aux;
-					j -= gap)
+			j = i;
+			while (j >= gap && array[j - gap] > array[j])
 			{
-				if (array[j] != array[j - gap])
-					array[j] = array[j - gap];
+				swap_ints(array + j, array + (j - gap));
+					j -= gap;
 			}
-			if (array[j] != aux)
-				array[j] = aux;
-
 		}
 		print_array(array, size);
 	}
+}
+
+/**
+ * swap_ints - Swap two integers in an array
+ *@a: The fisrt integer to swap
+ *@b: The second integer to swap
+ */
+void swap_ints(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
