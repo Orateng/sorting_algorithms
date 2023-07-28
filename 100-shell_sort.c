@@ -21,7 +21,8 @@ void shell_sort(int *array, size_t size)
 		for (i = gap; i < size; i++)
 		{
 			aux = array[i];
-			for (j = i; j >= gap && array[j - gap] > aux; j -= gap)
+			for (j = i; j >= gap && array[j - gap] > aux;
+					j -= gap)
 			{
 				if (array[j] != array[j - gap])
 					array[j] = array[j - gap];
