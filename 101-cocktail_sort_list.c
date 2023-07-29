@@ -1,15 +1,15 @@
 #include "sort.h"
 #include <stdio.h>
+
 /**
- *swap_node - swap a node for his previous one
- *@node: node
- *@list: node list
- *Return: return a pointer to a node which was enter it
+ *swap_node - Swap a node
+ *@node: Node
+ *@list: Node list
+ *Return: Return a pointer to a node
  */
 listint_t *swap_node(listint_t *node, listint_t **list)
 {
 	listint_t *back = node->prev, *current = node;
-	/*NULL, 19, 48, 9, 71, 13, NULL*/
 
 	back->next = current->next;
 	if (current->next)
@@ -23,11 +23,12 @@ listint_t *swap_node(listint_t *node, listint_t **list)
 		*list = current;
 	return (current);
 }
+
 /**
- *cocktail_sort_list - this is a cocktail sort implementation
- *working on a double linked lists
- *@list: list
+ *cocktail_sort_list - A function that implement the cocktail sorting
+ *@list: The list for the doubly linked list
  */
+
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *node;
