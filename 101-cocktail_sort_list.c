@@ -1,4 +1,28 @@
 #include "sort.h"
+
+/**
+ *swap_node - Swap a node
+ *@node: Node
+ *@list: Node list
+ *Return: Return a pointer to a node
+ */
+listint_t *swap_node(listint_t *node, listint_t **list)
+{
+        listint_t *back = node->prev, *current = node;
+
+        back->next = current->next;
+        if (current->next)
+                current->next->prev = back;
+        current->next = back;
+        current->prev = back->prev;
+        back->prev = current;
+        if (current->prev)
+                current->prev->next = current;
+        else
+                *list = current;
+        return (current);
+}
+
 /**
  *cocktail_sort_list - A function that implement the cocktail sorting
  *@list: The list for the doubly linked list
@@ -40,27 +64,4 @@ void cocktail_sort_list(listint_t **list)
 				node = node->prev;
 		}
 	}
-}
-
-/**
- *swap_node - Swap a node
- *@node: Node
- *@list: Node list
- *Return: Return a pointer to a node
- */
-listint_t *swap_node(listint_t *node, listint_t **list)
-{
-	listint_t *back = node->prev, *current = node;
-
-	back->next = current->next;
-	if (current->next)
-		current->next->prev = back;
-	current->next = back;
-	current->prev = back->prev;
-	back->prev = current;
-	if (current->prev)
-		current->prev->next = current;
-	else
-		*list = current;
-	return (current);
 }
