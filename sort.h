@@ -30,6 +30,6 @@ void shell_sort(int *array, size_t size);
 void swap_ints(int *a, int *b);
 void cocktail_sort_list(listint_t **list);
 listint_t *create_listint(const int *array, size_t size);
-
+void counting_sort(int *array, size_t size);
 
 #endif
