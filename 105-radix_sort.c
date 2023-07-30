@@ -43,7 +43,7 @@ int get_max(int *array, int size)
 
 /**
  *radix_counting_sort - Sort array using counting algorithm to sort
- *:array: Array to sort
+ *@array: Array to sort
  *@size: The size of the array
  *@sig: The significant digit to sort on
  *@buff: A buffer to contain sorted array
